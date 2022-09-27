@@ -24,7 +24,7 @@ const hariini = moment.tz('Asia/Jakarta').format('dddd, DD MMMM YYYY')
 const barat = moment.tz('Asia/Jakarta').format('HH:mm:ss')
 const tengah = moment.tz('Asia/Makassar').format('HH:mm:ss')
 const timur = moment.tz('Asia/Jayapura').format('HH:mm:ss')
-const nyoutube = ('© Naze\nYoutube/Sc :\nhttps://youtube.com/c/Nazedev')  //ubah di config biar ngk emror
+const nyoutube = ('© Kian')  //ubah di config biar ngk emror
 const ini_mark = `0@s.whatsapp.net`
 
 //TIME
@@ -167,14 +167,14 @@ module.exports = naze = async (naze, m, chatUpdate, store) => {
 	  // Anti Link
         if (db.data.chats[m.chat].antilink) {
         if (budy.match(`chat.whatsapp.com`)) {
-        m.reply(`「 *ANTI LINK* 」\n\n*Kamu terdeteksi mengirim link group*, *maaf kamu akan di kick‼️,yang mau juga silahkan kirim link‼️*`)
-        if (!isBotAdmins) return m.reply(`*Bot aja bukan admin anj*`)
+        m.reply(`Jangan Mengirim Link Disini Kamu Akan Di Kick`)
+        if (!isBotAdmins) return m.reply(`Jadikan Bot Sebagai Admin`)
         let gclink = (`https://chat.whatsapp.com/`+await naze.groupInviteCode(m.chat))
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isgclink = isLinkThisGc.test(m.text)
         if (isgclink) return m.reply(`*maaf gak jadi, karena kamu ngirim link group ini*`)
-        if (isAdmins) return m.reply(`*maaf kamu admin*`)
-        if (isCreator) return m.reply(`*maaf kamu owner bot ku*`)
+        if (isAdmins) return m.reply(`Kamu Admin Jadi Tidak Akan Di Kick`)
+        if (isCreator) return m.reply(`Owner Bot Tidak Bisa Di Kick`)
         naze.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
@@ -564,11 +564,11 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             }
             break
 	    case 'donasi': case 'sewabot': case 'sewa': case 'buypremium': case 'donate': {
-                naze.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/74fd634010128be37972c.jpg' }, caption: `*${ucapanWaktu} Kak ${m.pushName}*\n\n *Jika ingin berdonasi silahkan scan gambar diatas*\n\n*Atau klik link dibawah ini*\n_https://saweria.co/naze_\n\n*Atau Transfer via*\n- *Gopay Dana Ovo Qris ShopeePay*\n Ke nomer berikut : 082113821188\n\n_Terima kasih bagi yang sudah donasi_` }, { quoted: m })
+                m.reply(' DONASI VIA PULSA\n• ⧽ 083845409710\n• ⧽085736056578\n *Jika Ingin Sewa Bot Chat Owner Ya https://wa.me/6283845409710*')
             }
             break
             case 'sc': {
-                m.reply('https://wa.me/6285822347348')
+                m.reply('Mau Nyari Sc Ya🤪\n Cari Aja Di Yt Banyak')
             }
             break
             case 'chat': {
@@ -2711,7 +2711,7 @@ let capt = `⭔ Title: ${judul}
                 ]
                 },
                 ]
-                naze.sendListMsg(m.chat, `pilih aja *Rull* Setmenu nya!`, naze.user.name, `*Hello Arull* !`, `Pilih Rull`, sections, m)
+                naze.sendListMsg(m.chat, `pilih aja *kian* Setmenu nya!`, naze.user.name, `*Hello Kian* !`, `Pilih Kian`, sections, m)
                 }
             }
             break
@@ -2730,7 +2730,7 @@ let kominfo = `628119224545@s.whatsapp.net`
 let alfamart = `628111500959@s.whatsapp.net`
             let ownernya = ownernomer + '@s.whatsapp.net'
             let me = m.sender
-            let jawab = `*Bot by Naze Dev* 
+            let jawab = `*Bot by Kian* 
 -Creator :  @${ownernya.split('@')[0]}\n-Lu : @${me.split('@')[0]}\n-Powered  : @${ini_mark.split('@')[0]}\n- :  @${qontak.split('@')[0]}\n- :  @${dana.split('@')[0]}\n- :  @${shopeeotp.split('@')[0]}\n- :  @${shopee.split('@')[0]}\n- :  @${tokopedia.split('@')[0]}\n- :  @${smartfrend.split('@')[0]}\n- :  @${getcontact.split('@')[0]}\n- :  @${facebook.split('@')[0]}\n- :  @${pasarpolis.split('@')[0]}\n- :  @${getcontact.split('@')[0]}\n- :  @${kominfo.split('@')[0]}\n- :  @${alfamart.split('@')[0]}`
             let ments = [ownernya, me, ini_mark, qontak, dana, shopeeotp, shopee, tokopedia, smartfrend, getcontact, facebook, pasarpolis, kominfo, alfamart]
             let buttons = [
@@ -2755,7 +2755,7 @@ let alfamart = `628111500959@s.whatsapp.net`
 ├ *Powered* : @${ini_mark.split('@')[0]}
 ├ *Owner* : @${ownernya.split('@')[0]}
 ├ *Mode* : ${naze.public ? 'Public' : `Self`}
-├ *Prefix* :「 MULTI-PREFIX 」
+├ *Prefix* : ${prefix}
 ╰──❍
 
 ╭──❍「 𝙄𝙉𝘿𝙊𝙉𝙀𝙎𝙄𝘼𝙉 𝙏𝙄𝙈𝙀 」❍
@@ -2784,7 +2784,7 @@ let alfamart = `628111500959@s.whatsapp.net`
 ╭──❍「 𝙄𝙉𝙁𝙊 𝘽𝙊𝙏 」❍
 ├ *Nama Bot* : ${pushname}
 ├ *Mode* : ${naze.public ? 'Public' : `Self`}
-├ *Prefix* :「 MULTI-PREFIX 」
+├ *Prefix* : ${prefix}
 ╰──❍
 
 ╭──❍「 𝙄𝙉𝘿𝙊𝙉𝙀𝙎𝙄𝘼𝙉 𝙏𝙄𝙈𝙀 」❍
@@ -3099,7 +3099,7 @@ min = `┌──⭓ *Main Menu*
 │
 │⭔ ${prefix}ping
 │⭔ ${prefix}owner
-│⭔ ${prefix}menu / ${prefix}help / ${prefix}?
+│⭔ ${prefix}menu
 │⭔ ${prefix}delete
 │⭔ ${prefix}infochat
 │⭔ ${prefix}quoted
@@ -3425,7 +3425,7 @@ let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back'
 │
 │⭔ ${prefix}ping
 │⭔ ${prefix}owner
-│⭔ ${prefix}menu / ${prefix}help / ${prefix}?
+│⭔ ${prefix}menu
 │⭔ ${prefix}delete
 │⭔ ${prefix}infochat
 │⭔ ${prefix}quoted
