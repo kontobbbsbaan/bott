@@ -1445,26 +1445,6 @@ break
                 })
                 }
                 break
-        case 'gimage': {
-        if (!text) throw `Example : ${prefix + command} kaori cicak`
-        anu = await fetchJson(`https://api.akuari.my.id/search/googleimage?query=${text}`)
-        n = anu.result
-        images = n[Math.floor(Math.random() * n.length)]
-        let buttons = [
-                    {buttonId: `gimage ${text}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: images },
-                    caption: `*-------「 GIMAGE SEARCH 」-------*
-🤠 *Query* : ${text}
-🔗 *Media Url* : ${images}`,
-                    footer: naze.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                naze.sendMessage(m.chat, buttonMessage, { quoted: m })
-        }
-        break
 	    case 'play': case 'ytplay': {
                 if (!text) throw `Example : ${prefix + command} story wa anime`
                 let yts = require("yt-search")
@@ -1499,7 +1479,7 @@ break
                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(text, quality)
-                if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
+                if (media.filesize >= 90000) return m.reply('File Melebihi Batas '+util.format(media))
                 naze.sendImage(m.chat, media.thumb, `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '128kbps'}`, m)
                 naze.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
@@ -1509,7 +1489,7 @@ break
                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
-                if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
+                if (media.filesize >= 90000) return m.reply('File Melebihi Batas '+util.format(media))
                 naze.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
@@ -2755,7 +2735,7 @@ let alfamart = `628111500959@s.whatsapp.net`
 ├ *Wit* : ${timur} WIT
 ╰──❍`
             let ments = [ownernya, me, ini_mark]
-            let buttons = [{ buttonId: '${prefix}list', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            let buttons = [{ buttonId: 'list', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await naze.sendButtonText(m.chat, buttons, jawab, nyoutube, m, {mentions: ments})
             }
             break
@@ -2803,10 +2783,12 @@ let alfamart = `628111500959@s.whatsapp.net`
                 {title: "💢 Primbon", rowId: `mprimbon`, description: `Menampilkan Primbon Menu`},
                 {title: "🛹 Convert", rowId: `mconvert`, description: `Menampilkan Convert Menu`},
                 {title: "🎊 Main", rowId: `mmain`, description: `Menampilkan Main Menu`},
+                {title: "🧚‍♀️ Script Bot", rowId: `script`, description: `Menampilkan Script Bot`},
                 {title: "📍 Database", rowId: `mdatabase`, description: `Menampilkan Database Menu`},
                 {title: "💨 Anonymous", rowId: `manonymous`, description: `Menampilkan Anonymous Menu`},
                 {title: "🕌 Islamic", rowId: `mislamic`, description: `Menampilkan Islamic Menu`},
                 {title: "🎤 Voice", rowId: `mvoice`, description: `Menampilkan Voice Menu`},
+                {title: "🔊 Sound Menu", rowId: `msound`, description: `Menampilkan Sound Menu`},
                 {title: "🔧 Owner", rowId: `mowner`, description: `Menampilkan Owner Menu`}
                 ]
                 },
@@ -2890,7 +2872,6 @@ sarch = `┌──⭓ *Search Menu*
 │⭔ ${prefix}play [query]
 │⭔ ${prefix}yts [query]
 │⭔ ${prefix}google [query]
-│⭔ ${prefix}gimage [query]
 │⭔ ${prefix}pinterest [query]
 │⭔ ${prefix}wallpaper [query]
 │⭔ ${prefix}wikimedia [query]
@@ -3230,7 +3211,183 @@ dnasi = ` \n
 🔖 MAKASIH YANG SUDAH BERDONASI SEMOGA SEHAT SELALU DAN REZEKI NYA LANCAR TERUS `
 let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await naze.sendButtonText(m.chat, buttons, dnasi, nyoutube, m)
-            
+            }
+            break
+            case 'msound': {
+sound = `
+┌──⭓ *Sound Menu*
+│
+│⭔${prefix}sound1
+│⭔ ${prefix}sound2
+│⭔ ${prefix}sound3
+│⭔ ${prefix}sound4
+│⭔ ${prefix}sound5
+│⭔ ${prefix}sound6
+│⭔ ${prefix}sound7
+│⭔ ${prefix}sound8
+│⭔ ${prefix}sound9
+│⭔ ${prefix}sound10
+│⭔ ${prefix}sound11
+│⭔ ${prefix}sound12
+│⭔ ${prefix}sound13
+│⭔ ${prefix}sound14
+│⭔ ${prefix}sound15
+│⭔ ${prefix}sound16
+│⭔ ${prefix}sound17
+│⭔ ${prefix}sound18
+│⭔ ${prefix}sound19
+│⭔ ${prefix}sound20
+│⭔ ${prefix}sound21
+│⭔ ${prefix}sound22
+│⭔ ${prefix}sound23
+│⭔ ${prefix}sound24
+│⭔ ${prefix}sound25
+│⭔ ${prefix}sound26
+│⭔ ${prefix}sound27
+│⭔ ${prefix}sound28
+│⭔ ${prefix}sound29
+│⭔ ${prefix}sound30
+│⭔ ${prefix}sound31
+│⭔ ${prefix}sound32
+│⭔ ${prefix}sound33
+│⭔ ${prefix}sound34
+│⭔ ${prefix}sound35
+│⭔ ${prefix}sound36
+│⭔ ${prefix}sound37
+│⭔ ${prefix}sound38
+│⭔ ${prefix}sound39
+│⭔ ${prefix}sound40
+│⭔ ${prefix}sound41
+│⭔ ${prefix}sound42
+│⭔ ${prefix}sound43
+│⭔ ${prefix}sound44
+│⭔ ${prefix}sound45
+│⭔ ${prefix}sound46
+│⭔ ${prefix}sound47
+│⭔ ${prefix}sound48
+│⭔ ${prefix}sound49
+│⭔ ${prefix}sound50
+│⭔ ${prefix}sound51
+│⭔ ${prefix}sound52
+│⭔ ${prefix}sound53
+│⭔ ${prefix}sound54
+│⭔ ${prefix}sound55
+│⭔ ${prefix}sound56
+│⭔ ${prefix}sound57
+│⭔ ${prefix}sound58
+│⭔ ${prefix}sound59
+│⭔ ${prefix}sound60
+│⭔ ${prefix}sound61
+│⭔ ${prefix}sound62
+│⭔ ${prefix}sound63
+│⭔ ${prefix}sound64
+│⭔ ${prefix}sound65
+│⭔ ${prefix}sound66
+│⭔ ${prefix}sound67
+│⭔ ${prefix}sound68
+│⭔ ${prefix}sound69
+│⭔ ${prefix}sound70
+│⭔ ${prefix}sound71
+│⭔ ${prefix}sound72
+│⭔ ${prefix}sound73
+│⭔ ${prefix}sound74
+│⭔ ${prefix}sound75
+│⭔ ${prefix}sound76
+│⭔ ${prefix}sound77
+│⭔ ${prefix}sound78
+│⭔ ${prefix}sound79
+│⭔ ${prefix}sound80
+│⭔ ${prefix}sound81
+│⭔ ${prefix}sound82
+│⭔ ${prefix}sound83
+│⭔ ${prefix}sound84
+│⭔ ${prefix}sound85
+│⭔ ${prefix}sound86
+│⭔ ${prefix}sound87
+│⭔ ${prefix}sound88
+│⭔ ${prefix}sound89
+│⭔ ${prefix}sound90
+│⭔ ${prefix}sound91
+│⭔ ${prefix}sound92
+│⭔ ${prefix}sound93
+│⭔ ${prefix}sound94
+│⭔ ${prefix}sound95
+│⭔ ${prefix}sound96
+│⭔ ${prefix}sound97
+│⭔ ${prefix}sound98
+│⭔ ${prefix}sound99
+│⭔ ${prefix}sound100
+│⭔ ${prefix}sound101
+│⭔ ${prefix}sound102
+│⭔ ${prefix}sound103
+│⭔ ${prefix}sound104
+│⭔ ${prefix}sound105
+│⭔ ${prefix}sound106
+│⭔ ${prefix}sound107
+│⭔ ${prefix}sound108
+│⭔ ${prefix}sound109
+│⭔ ${prefix}sound110
+│⭔ ${prefix}sound111
+│⭔ ${prefix}sound112
+│⭔ ${prefix}sound113
+│⭔ ${prefix}sound114
+│⭔ ${prefix}sound115
+│⭔ ${prefix}sound116
+│⭔ ${prefix}sound117
+│⭔ ${prefix}sound118
+│⭔ ${prefix}sound119
+│⭔ ${prefix}sound120
+│⭔ ${prefix}sound121
+│⭔ ${prefix}sound122
+│⭔ ${prefix}sound123
+│⭔ ${prefix}sound124
+│⭔ ${prefix}sound125
+│⭔ ${prefix}sound126
+│⭔ ${prefix}sound127
+│⭔ ${prefix}sound128
+│⭔ ${prefix}sound129
+│⭔ ${prefix}sound130
+│⭔ ${prefix}sound131
+│⭔ ${prefix}sound132
+│⭔ ${prefix}sound133
+│⭔ ${prefix}sound134
+│⭔ ${prefix}sound135
+│⭔ ${prefix}sound136
+│⭔ ${prefix}sound137
+│⭔ ${prefix}sound138
+│⭔ ${prefix}sound139
+│⭔ ${prefix}sound140
+│⭔ ${prefix}sound141
+│⭔ ${prefix}sound142
+│⭔ ${prefix}sound143
+│⭔ ${prefix}sound144
+│⭔ ${prefix}sound145
+│⭔ ${prefix}sound146
+│⭔ ${prefix}sound147
+│⭔ ${prefix}sound148
+│⭔ ${prefix}sound149
+│⭔ ${prefix}sound150
+│⭔ ${prefix}sound151
+│⭔ ${prefix}sound152
+│⭔ ${prefix}sound153
+│⭔ ${prefix}sound154
+│⭔ ${prefix}sound155
+│⭔ ${prefix}sound156
+│⭔ ${prefix}sound157
+│⭔ ${prefix}sound158
+│⭔ ${prefix}sound159
+│⭔ ${prefix}sound160
+│⭔ ${prefix}sound161
+│
+└───────⭓`
+let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            await naze.sendButtonText(m.chat, buttons, sound, nyoutube, m)
+            }
+            break
+            case 'script': case 'sc': {
+sc = `MAU NYARI SCRIPT BOT YA? MAAF KALO MAU CARI AJA DI YOUTUBE 😂`
+let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            await naze.sendButtonText(m.chat, buttons, sc, nyoutube, m)
             }
             break
             case 'mowner': {
@@ -3318,7 +3475,6 @@ let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back'
 │⭔ ${prefix}play [query]
 │⭔ ${prefix}yts [query]
 │⭔ ${prefix}google [query]
-│⭔ ${prefix}gimage [query]
 │⭔ ${prefix}pinterest [query]
 │⭔ ${prefix}wallpaper [query]
 │⭔ ${prefix}wikimedia [query]
@@ -3549,6 +3705,172 @@ let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back'
 │⭔ ${prefix}setexif
 │⭔ ${prefix}setmenu [option]
 │
+└───────⭓
+
+┌──⭓ *Sound Menu*
+│
+│⭔${prefix}sound1
+│⭔ ${prefix}sound2
+│⭔ ${prefix}sound3
+│⭔ ${prefix}sound4
+│⭔ ${prefix}sound5
+│⭔ ${prefix}sound6
+│⭔ ${prefix}sound7
+│⭔ ${prefix}sound8
+│⭔ ${prefix}sound9
+│⭔ ${prefix}sound10
+│⭔ ${prefix}sound11
+│⭔ ${prefix}sound12
+│⭔ ${prefix}sound13
+│⭔ ${prefix}sound14
+│⭔ ${prefix}sound15
+│⭔ ${prefix}sound16
+│⭔ ${prefix}sound17
+│⭔ ${prefix}sound18
+│⭔ ${prefix}sound19
+│⭔ ${prefix}sound20
+│⭔ ${prefix}sound21
+│⭔ ${prefix}sound22
+│⭔ ${prefix}sound23
+│⭔ ${prefix}sound24
+│⭔ ${prefix}sound25
+│⭔ ${prefix}sound26
+│⭔ ${prefix}sound27
+│⭔ ${prefix}sound28
+│⭔ ${prefix}sound29
+│⭔ ${prefix}sound30
+│⭔ ${prefix}sound31
+│⭔ ${prefix}sound32
+│⭔ ${prefix}sound33
+│⭔ ${prefix}sound34
+│⭔ ${prefix}sound35
+│⭔ ${prefix}sound36
+│⭔ ${prefix}sound37
+│⭔ ${prefix}sound38
+│⭔ ${prefix}sound39
+│⭔ ${prefix}sound40
+│⭔ ${prefix}sound41
+│⭔ ${prefix}sound42
+│⭔ ${prefix}sound43
+│⭔ ${prefix}sound44
+│⭔ ${prefix}sound45
+│⭔ ${prefix}sound46
+│⭔ ${prefix}sound47
+│⭔ ${prefix}sound48
+│⭔ ${prefix}sound49
+│⭔ ${prefix}sound50
+│⭔ ${prefix}sound51
+│⭔ ${prefix}sound52
+│⭔ ${prefix}sound53
+│⭔ ${prefix}sound54
+│⭔ ${prefix}sound55
+│⭔ ${prefix}sound56
+│⭔ ${prefix}sound57
+│⭔ ${prefix}sound58
+│⭔ ${prefix}sound59
+│⭔ ${prefix}sound60
+│⭔ ${prefix}sound61
+│⭔ ${prefix}sound62
+│⭔ ${prefix}sound63
+│⭔ ${prefix}sound64
+│⭔ ${prefix}sound65
+│⭔ ${prefix}sound66
+│⭔ ${prefix}sound67
+│⭔ ${prefix}sound68
+│⭔ ${prefix}sound69
+│⭔ ${prefix}sound70
+│⭔ ${prefix}sound71
+│⭔ ${prefix}sound72
+│⭔ ${prefix}sound73
+│⭔ ${prefix}sound74
+│⭔ ${prefix}sound75
+│⭔ ${prefix}sound76
+│⭔ ${prefix}sound77
+│⭔ ${prefix}sound78
+│⭔ ${prefix}sound79
+│⭔ ${prefix}sound80
+│⭔ ${prefix}sound81
+│⭔ ${prefix}sound82
+│⭔ ${prefix}sound83
+│⭔ ${prefix}sound84
+│⭔ ${prefix}sound85
+│⭔ ${prefix}sound86
+│⭔ ${prefix}sound87
+│⭔ ${prefix}sound88
+│⭔ ${prefix}sound89
+│⭔ ${prefix}sound90
+│⭔ ${prefix}sound91
+│⭔ ${prefix}sound92
+│⭔ ${prefix}sound93
+│⭔ ${prefix}sound94
+│⭔ ${prefix}sound95
+│⭔ ${prefix}sound96
+│⭔ ${prefix}sound97
+│⭔ ${prefix}sound98
+│⭔ ${prefix}sound99
+│⭔ ${prefix}sound100
+│⭔ ${prefix}sound101
+│⭔ ${prefix}sound102
+│⭔ ${prefix}sound103
+│⭔ ${prefix}sound104
+│⭔ ${prefix}sound105
+│⭔ ${prefix}sound106
+│⭔ ${prefix}sound107
+│⭔ ${prefix}sound108
+│⭔ ${prefix}sound109
+│⭔ ${prefix}sound110
+│⭔ ${prefix}sound111
+│⭔ ${prefix}sound112
+│⭔ ${prefix}sound113
+│⭔ ${prefix}sound114
+│⭔ ${prefix}sound115
+│⭔ ${prefix}sound116
+│⭔ ${prefix}sound117
+│⭔ ${prefix}sound118
+│⭔ ${prefix}sound119
+│⭔ ${prefix}sound120
+│⭔ ${prefix}sound121
+│⭔ ${prefix}sound122
+│⭔ ${prefix}sound123
+│⭔ ${prefix}sound124
+│⭔ ${prefix}sound125
+│⭔ ${prefix}sound126
+│⭔ ${prefix}sound127
+│⭔ ${prefix}sound128
+│⭔ ${prefix}sound129
+│⭔ ${prefix}sound130
+│⭔ ${prefix}sound131
+│⭔ ${prefix}sound132
+│⭔ ${prefix}sound133
+│⭔ ${prefix}sound134
+│⭔ ${prefix}sound135
+│⭔ ${prefix}sound136
+│⭔ ${prefix}sound137
+│⭔ ${prefix}sound138
+│⭔ ${prefix}sound139
+│⭔ ${prefix}sound140
+│⭔ ${prefix}sound141
+│⭔ ${prefix}sound142
+│⭔ ${prefix}sound143
+│⭔ ${prefix}sound144
+│⭔ ${prefix}sound145
+│⭔ ${prefix}sound146
+│⭔ ${prefix}sound147
+│⭔ ${prefix}sound148
+│⭔ ${prefix}sound149
+│⭔ ${prefix}sound150
+│⭔ ${prefix}sound151
+│⭔ ${prefix}sound152
+│⭔ ${prefix}sound153
+│⭔ ${prefix}sound154
+│⭔ ${prefix}sound155
+│⭔ ${prefix}sound156
+│⭔ ${prefix}sound157
+│⭔ ${prefix}sound158
+│⭔ ${prefix}sound159
+│⭔ ${prefix}sound160
+│⭔ ${prefix}sound161
+│
 └───────⭓`
                 let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 },{ buttonId: 'owner', buttonText: { displayText: '👤 Owner' }, type: 1 }]
             await naze.sendButtonText(m.chat, buttons, anu, nyoutube, m, {mentions: ments})
@@ -3716,7 +4038,7 @@ case 'sound159':
 case 'sound160':
 case 'sound161':
 naze_dev = await getBuffer(`https://github.com/DGXeon/Tiktokmusic-API/raw/master/tiktokmusic/${command}.mp3`)
-await naze.sendMessage(m.chat, { audio: naze_dev, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
+await naze.sendMessage(m.chat, { audio: naze_dev, mimetype: 'audio/mp4', ptt: false }, { quoted: m })     
 break
             default:
                 if (budy.startsWith('=>')) {
