@@ -563,14 +563,6 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             }
             }
             break
-	    case 'donasi': case 'sewabot': case 'sewa': case 'buypremium': case 'donate': {
-                m.reply(' DONASI VIA PULSA\n• ⧽ 083845409710\n• ⧽085736056578\n *Jika Ingin Sewa Bot Chat Owner Ya https://wa.me/6283845409710*')
-            }
-            break
-            case 'sc': {
-                m.reply('Mau Nyari Sc Ya🤪\n Cari Aja Di Yt Banyak')
-            }
-            break
             case 'chat': {
                 if (!isCreator) throw mess.owner
                 if (!q) throw 'Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete'
@@ -2746,8 +2738,6 @@ let alfamart = `628111500959@s.whatsapp.net`
 ╭──❍「 𝙄𝙉𝙁𝙊 𝙐𝙎𝙀𝙍 」❍
 ├ *Nama* : ${pushname}
 ├ *Number* : @${me.split('@')[0]}
-├ *Premium* : ${isPremium ? '✅' : `❌`}
-├ *Limit* : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 ╰──❍
 
 ╭──❍「 𝙄𝙉𝙁𝙊 𝘽𝙊𝙏 」❍
@@ -2777,8 +2767,6 @@ let alfamart = `628111500959@s.whatsapp.net`
 ╭──❍「 𝙄𝙉𝙁𝙊 𝙐𝙎𝙀𝙍 」❍
 ├ *Nama* : ${pushname}
 ├ *Number* : ${me.split('@')[0]}
-├ *Premium* : ${isPremium ? '✅' : `❌`}
-├ *Limit* : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 ╰──❍
 
 ╭──❍「 𝙄𝙉𝙁𝙊 𝘽𝙊𝙏 」❍
@@ -2797,6 +2785,10 @@ let alfamart = `628111500959@s.whatsapp.net`
                 {
                 title: "LIST MENU",
                 rows: [
+                {title: "⚜️ Grub Bot Whatsapp", rowId: `gcbot`, description: `Menampilkan Link Grub Bot/Gc Bot`},
+                {title: "🌀 Allmenu", rowId: `allmenu`, description: `Menampilkan Semua Menu`},
+                {title: "🚨 Rules Bot", rowId: `rules`, description: `Menampilkan Rules Bot`},
+                {title: "🏵 Sewa Bot", rowId: `sewa`, description: `Menampilkan Harga Sewa Bot Murah`},
                 {title: "👥 Group Menu", rowId: `mgroup`, description: `Menampilkan Group Menu`},
                 {title: "🥊 Webzone", rowId: `mwebzone`, description: `Menampilkan Webzone Menu`},
                 {title: "📥 Downloader", rowId: `mdownloader`, description: `Menampilkan Downloader Menu`},
@@ -3199,6 +3191,44 @@ Bot Akan Memblokir Kamu Atau Keluar Dari Grup Yang Kamu Kelola.
 ━━━━━━━━━━━━━━━━━━━━━━━━`
 let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await naze.sendButtonText(m.chat, buttons, rules, nyoutube, m)
+            }
+            break
+            case 'sewa': {
+sewa = `
+╭━━━━「 *SEWA* 」
+┊🌷 *:* _5k/grup (1 minggu)_
+┊🌷 *:* _15k/grup (1 bulan)_
+┊🌷 *:* _30k/grup (2 bulan)_
+┊🌷 *:* _35k/grup (4 bulan)_                                                      
+┊🌷 *:* _65k/grup (12 bulan)_
+╰═┅═━––––––๑
+
+_Minat?_ https://wa.me/6283845409710
+
+–––––– *🐾 Kebijakan* ––––––
+🗣️: Kak, Kok harganya mahal banget?
+💬: Mau tawar menawar? boleh, silahkan chat owner aja`
+let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            await naze.sendButtonText(m.chat, buttons, sewa, nyoutube, m)
+            }
+            break
+            case 'gcbot': {
+gbot = `https://chat.whatsapp.com/FvDujLzzrQsGaJaRLVZ0Fg\nJangan Lupa Join Yah Kak`
+let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            await naze.sendButtonText(m.chat, buttons, gbot, nyoutube, m)
+            }
+            break
+            case 'donasi': {
+dnasi = ` \n
+⭔ *DONASI*
+
+⭔ PULSA AXIS = 083845409710
+⭔ PULSA INDOSAT = 085736056578
+
+🔖 MAKASIH YANG SUDAH BERDONASI SEMOGA SEHAT SELALU DAN REZEKI NYA LANCAR TERUS `
+let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            await naze.sendButtonText(m.chat, buttons, dnasi, nyoutube, m)
+            
             }
             break
             case 'mowner': {
