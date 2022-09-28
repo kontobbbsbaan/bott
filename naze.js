@@ -3198,7 +3198,7 @@ Bot Akan Memblokir Kamu Atau Keluar Dari Grup Yang Kamu Kelola.
 *➤ Apapun yang anda perintah pada bot ini , KAMI TIDAK AKAN BERTANGGUNG JAWAB*
 ━━━━━━━━━━━━━━━━━━━━━━━━`
 let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await naze.sendButtonText(m.chat, buttons, islmic, nyoutube, m)
+            await naze.sendButtonText(m.chat, buttons, rules, nyoutube, m)
             }
             break
             case 'mowner': {
