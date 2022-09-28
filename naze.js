@@ -24,7 +24,7 @@ const hariini = moment.tz('Asia/Jakarta').format('dddd, DD MMMM YYYY')
 const barat = moment.tz('Asia/Jakarta').format('HH:mm:ss')
 const tengah = moment.tz('Asia/Makassar').format('HH:mm:ss')
 const timur = moment.tz('Asia/Jayapura').format('HH:mm:ss')
-const nyoutube = ('© Kian')  //ubah di config biar ngk emror
+const nyoutube = ('©Kian\nBermain Bot Dengan Bijak Ya😁')  //ubah di config biar ngk emror
 const ini_mark = `0@s.whatsapp.net`
 
 //TIME
@@ -1196,7 +1196,7 @@ break
                 m.reply(`Mengirim Broadcast Ke ${anu.length} Chat\nWaktu Selesai ${anu.length * 1.5} detik`)
 		for (let yoi of anu) {
 		    await sleep(3000)
-                      let txt = `「 *Broadcast Naze Dev* 」\n\n${text}`
+                      let txt = `「 *Broadcast* 」\n\n${text}`
                       let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await naze.sendButtonText(m.chat, buttons, txt, nyoutube, m)
 		}}
@@ -1234,7 +1234,7 @@ break
                     naze.sendText(m.chat, 'List Online:\n\n' + online.map(v => '⭔ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
              }
              break
-            case 'sticker': case 's': case 'stickergif': case 'sgif': {
+            case 'sticker': case 's': case 'stickergif': case 'sgif': case 'stiker': {
             if (!quoted) throw `*Balas Video/Image Dengan Caption* ${prefix + command}`
             m.reply(mess.wait)
                     if (/image/.test(mime)) {
@@ -2741,7 +2741,7 @@ let alfamart = `628111500959@s.whatsapp.net`
 ╰──❍
 
 ╭──❍「 𝙄𝙉𝙁𝙊 𝘽𝙊𝙏 」❍
-├ *Nama Bot* : ${pushname}
+├ *Nama Bot* : MODZ BOTZ
 ├ *Powered* : @${ini_mark.split('@')[0]}
 ├ *Owner* : @${ownernya.split('@')[0]}
 ├ *Mode* : ${naze.public ? 'Public' : `Self`}
@@ -2755,7 +2755,7 @@ let alfamart = `628111500959@s.whatsapp.net`
 ├ *Wit* : ${timur} WIT
 ╰──❍`
             let ments = [ownernya, me, ini_mark]
-            let buttons = [{ buttonId: 'list', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            let buttons = [{ buttonId: '${prefix}list', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await naze.sendButtonText(m.chat, buttons, jawab, nyoutube, m, {mentions: ments})
             }
             break
@@ -2770,7 +2770,9 @@ let alfamart = `628111500959@s.whatsapp.net`
 ╰──❍
 
 ╭──❍「 𝙄𝙉𝙁𝙊 𝘽𝙊𝙏 」❍
-├ *Nama Bot* : ${pushname}
+├ *Nama Bot* : MODZ BOTZ
+├ *Powered* : @${ini_mark.split('@')[0]}
+├ *Owner* : @${ownernya.split('@')[0]}
 ├ *Mode* : ${naze.public ? 'Public' : `Self`}
 ├ *Prefix* : ${prefix}
 ╰──❍
@@ -2786,7 +2788,7 @@ let alfamart = `628111500959@s.whatsapp.net`
                 title: "LIST MENU",
                 rows: [
                 {title: "⚜️ Grub Bot Whatsapp", rowId: `gcbot`, description: `Menampilkan Link Grub Bot/Gc Bot`},
-                {title: "🌀 Allmenu", rowId: `allmenu`, description: `Menampilkan Semua Menu`},
+                {title: "🌀 Allmenu", rowId: `${prefix}allmenu`, description: `Menampilkan Semua Menu`},
                 {title: "🚨 Rules Bot", rowId: `rules`, description: `Menampilkan Rules Bot`},
                 {title: "🏵 Sewa Bot", rowId: `sewa`, description: `Menampilkan Harga Sewa Bot Murah`},
                 {title: "👥 Group Menu", rowId: `mgroup`, description: `Menampilkan Group Menu`},
@@ -3548,7 +3550,7 @@ let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back'
 │⭔ ${prefix}setmenu [option]
 │
 └───────⭓`
-                let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '👤 Owner' }, type: 1 }]
+                let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 },{ buttonId: 'owner', buttonText: { displayText: '👤 Owner' }, type: 1 }]
             await naze.sendButtonText(m.chat, buttons, anu, nyoutube, m, {mentions: ments})
             }
             break
