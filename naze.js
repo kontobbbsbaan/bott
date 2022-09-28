@@ -3177,6 +3177,30 @@ let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back'
             await naze.sendButtonText(m.chat, buttons, vice, nyoutube, m)
             }
             break
+            case 'rules': {
+rules = `
+*RULES BAGI PENGGUNA BOT*
+    
+➤ Tolong Gunakan Delay Jangan Spam Saat Menggunakan Bot, Mentang Mentang Gratis Diborong semua.
+➤ Call/VC Bot Auto Block.
+➤ Jangan Call/VC Bot Kalau Tidak aktif.
+➤ Bot tidak aktif 24 jam, jadi tergantung kalau ownernya lagi ada waktu botnya juga on.
+
+*Konsekuensi Bila Melanggar Rules*
+Bot Akan Memblokir Kamu Atau Keluar Dari Grup Yang Kamu Kelola.
+
+━━━━━━━[ *PENTING!* ]━━━━━━━━
+*➤ Kami tidak pernah meminta anda untuk* berdonasi! ingin donasi chat owner
+*➤ Kami tidak menyimpan gambar, video,  audio, dan dokumen yang anda kirim*
+*➤ Kami tidak akan pernah meminta anda untukmemberikan informasi pribadi*
+*➤ Jika menemukan Bug/Error silahkan langsung lapor ke Owner bot*
+*➤  Jika kamu menelpon bot Dan di block,Owner Tidak Bertanggung Jawab*
+*➤ Apapun yang anda perintah pada bot ini , KAMI TIDAK AKAN BERTANGGUNG JAWAB*
+━━━━━━━━━━━━━━━━━━━━━━━━`
+let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            await naze.sendButtonText(m.chat, buttons, islmic, nyoutube, m)
+            }
+            break
             case 'mowner': {
 oner = `┌──⭓ *Owner Menu*
 │
@@ -3493,9 +3517,8 @@ let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back'
 │⭔ ${prefix}setexif
 │⭔ ${prefix}setmenu [option]
 │
-└───────⭓
-_Donasi Ngab_\n_Jangan Ngarep Free Mulu_`
-                let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
+└───────⭓`
+                let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '👤 Owner' }, type: 1 }]
             await naze.sendButtonText(m.chat, buttons, anu, nyoutube, m, {mentions: ments})
             }
             break
