@@ -2765,7 +2765,7 @@ let alfamart = `628111500959@s.whatsapp.net`
 ├ *Wit* : ${timur} WIT
 ╰──❍`
             let ments = [ownernya, me, ini_mark]
-            let buttons = [{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            let buttons = [{ buttonId: 'list', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await naze.sendButtonText(m.chat, buttons, jawab, nyoutube, m, {mentions: ments})
             }
             break
@@ -2795,29 +2795,29 @@ let alfamart = `628111500959@s.whatsapp.net`
 ╰──❍`
                 let sections = [
                 {
-                title: "CHANGE MENU BOT",
+                title: "LIST MENU",
                 rows: [
-                {title: "Group", rowId: `mgroup`, description: `👥Group Menu`},
-                {title: "Webzone", rowId: `mwebzone`, description: `📹Webzone Menu`},
-                {title: "Downloader", rowId: `mdownloader`, description: `📥Downloader Menu`},
-                {title: "Search", rowId: `msearch`, description: `🔍Search Menu`},
-                {title: "Random", rowId: `mrandom`, description: `❔Random Menu`},
-                {title: "Text Pro", rowId: `mtextpro`, description: `❇Text Pro Menu`},
-                {title: "Photo Oxy", rowId: `mphotooxy`, description: `♻️Photo Oxy Menu`},
-                {title: "Ephoto", rowId: `mephoto`, description: `🗳Ephoto Menu`},
-                {title: "Fun", rowId: `mfun`, description: `🔫Fun Menu`},
-                {title: "Primbon", rowId: `mprimbon`, description: `😂Primbon Menu`},
-                {title: "Convert", rowId: `mconvert`, description: `🛠Convert Menu`},
-                {title: "Main", rowId: `mmain`, description: `💾Main Menu`},
-                {title: "Database", rowId: `mdatabase`, description: `📁Database Menu`},
-                {title: "Anonymous", rowId: `manonymous`, description: `🎭Anonymous Menu`},
-                {title: "Islamic", rowId: `mislamic`, description: `🕌Islamic Menu`},
-                {title: "Voice", rowId: `mvoice`, description: `🎶Voice Menu`},
-                {title: "Owner", rowId: `mowner`, description: `🎟Owner Menu`}
+                {title: "👥 Group Menu", rowId: `mgroup`, description: `Menampilkan Group Menu`},
+                {title: "🥊 Webzone", rowId: `mwebzone`, description: `Menampilkan Webzone Menu`},
+                {title: "📥 Downloader", rowId: `mdownloader`, description: `Menampilkan Downloader Menu`},
+                {title: "🚀 Search", rowId: `msearch`, description: `Menampilkan Search Menu`},
+                {title: "🔖 Random", rowId: `mrandom`, description: `Menampilkan Random Menu`},
+                {title: "🎀 Text Pro", rowId: `mtextpro`, description: `Menampilkan Text Pro Menu`},
+                {title: "🎗 Photo Oxy", rowId: `mphotooxy`, description: `Menampilkan Photo Oxy Menu`},
+                {title: "🤹‍♀️ Ephoto", rowId: `mephoto`, description: `Menampilkan Ephoto Menu`},
+                {title: "😂 Fun", rowId: `mfun`, description: `Menampilkan Fun Menu`},
+                {title: "💢 Primbon", rowId: `mprimbon`, description: `Menampilkan Primbon Menu`},
+                {title: "🛹 Convert", rowId: `mconvert`, description: `Menampilkan Convert Menu`},
+                {title: "🎊 Main", rowId: `mmain`, description: `Menampilkan Main Menu`},
+                {title: "📍 Database", rowId: `mdatabase`, description: `Menampilkan Database Menu`},
+                {title: "💨 Anonymous", rowId: `manonymous`, description: `Menampilkan Anonymous Menu`},
+                {title: "🕌 Islamic", rowId: `mislamic`, description: `Menampilkan Islamic Menu`},
+                {title: "🎤 Voice", rowId: `mvoice`, description: `Menampilkan Voice Menu`},
+                {title: "🔧 Owner", rowId: `mowner`, description: `Menampilkan Owner Menu`}
                 ]
                 },
                 ]
-                naze.sendListMsg(m.chat, kukiw, nyoutube, `*Hello Kak ${pushname}*!`, `Pilih Menu`, sections, m)
+                naze.sendListMsg(m.chat, kukiw, nyoutube, `*Hello Kak ${pushname}*!`, `Click Disini`, sections, m)
             }
             break
             case 'mgroup': {
