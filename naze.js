@@ -3667,11 +3667,6 @@ let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back'
 │⭔ ${prefix}keluar
 │
 └───────⭓
-┌──⭓ *Sticker*
-│
-│⭔ ${prefix}patrick
-│
-└───────⭓
 ┌──⭓ *Islamic Menu*
 │
 │⭔ ${prefix}iqra
@@ -3879,15 +3874,6 @@ let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back'
 └───────⭓`
                 let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 },{ buttonId: 'owner', buttonText: { displayText: '👤 Owner' }, type: 1 }]
             await naze.sendButtonText(m.chat, buttons, anu, nyoutube, m, {mentions: ments})
-            }
-            break
-            case 'patrick':
-case 'patricksticker':
-var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/patrik')
-var wifegerak = ano.split('\n')
-var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await naze.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
-await fs.unlinkSync(encmedia)
             }
             break
             case 'sound1':
