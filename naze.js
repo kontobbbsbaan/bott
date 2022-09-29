@@ -3888,7 +3888,7 @@ var wifegerak = ano.split('\n')
 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
 encmedia = await naze.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
 await fs.unlinkSync(encmedia)
-}
+            }
             break
             case 'sound1':
 case 'sound2':
